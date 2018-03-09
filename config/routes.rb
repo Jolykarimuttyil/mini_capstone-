@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get "/product_url" => "products#product_method"
-end
+    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :v1 do 
+    get "/products"=> "products#index"
+    get "/products/:id" => "products#show"
+    post "/products" => "products#create"
+  end
+end 
